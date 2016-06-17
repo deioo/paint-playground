@@ -1,0 +1,10 @@
+# compiled output
+/tmp
+/styles
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache

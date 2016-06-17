@@ -1,0 +1,20 @@
+{
+  "name": "paint-tester",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Andrei Popa <andrei.deioo@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "paint": "git+https://github.com/alphasights/paint.git#feature/ap/flex-grid-and-gutter"
+  }
+}

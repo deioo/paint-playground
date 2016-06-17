@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Paint Playground</title>
+  <meta name="description" content="Paint Playground">
+  <meta name="author" content="Paint">
+
+  <link rel="stylesheet" href="styles/application.min.css">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <main class="application">
+    <section class="application__container">
+      <div class="application__branding">
+        <div class="branding"></div>
+      </div>
+
+      <h1 class="application__heading">Paint Playground</h1>
+
+      <p class="application__description">Paint is a collection of SCSS functions, mixins, placeholders and global styles that help us bootstrap our internal apps.</p>
+      <p class="application__description">It also acts as an abstraction layer, keeping other frameworks / dependencies away from the applications. This makes structural changes (like removing a dependency or adding a new one) easier to implement.</p>
+
+      <article class="component">
+        <h1 class="component__heading">Flex Grid</h1>
+
+        <p class="component__description">The main purpose of this helper component is to allow wrapping up any type of grids without having to copy paste the properties manually each time they are required.</p>
+        <p class="component__description">The helper consists of two separate placeholders, <b>%row</b> and <b>%col</b>. The second is never going to work without having the first as a parent, so never extend `%col` without being in the context of a `%row`.</p>
+
+        <h2 class="component__subheading">%row</h2>
+        <p class="component__description">
+          Extending this is going to turn the child containers into columns. The `%row` also has control over the alignment of the items, through a set of modifiers:
+        </p>
+
+        <ul class="features">
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Alignment</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--middle</h3>
+            <p class="feature__description">Aligns all the columns <b>vertically</b>. Makes a difference only if the columns have different heights.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--center</h3>
+            <p class="feature__description">Aligns all the columns <b>horizontally</b></p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--[top / bottom / left / right]</h3>
+            <p class="feature__description">Puts all the columns to the <b>top / bottom / left or right</b></p>
+          </li>
+
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Positioning</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--space-around</h3>
+            <p class="feature__description">Splits all the empty space around the columns, proportionally</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--space-between</h3>
+            <p class="feature__description">Splits all the empty space proportionally between the columns <em>(so the first and last columns will stick to the edges of the row)</em></p>
+          </li>
+
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Wrapping</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--wrap</h3>
+            <p class="feature__description">Allows columns to go on multiple rows. All the alignment and positioning will be kept from line to line.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--vertical</h3>
+            <p class="feature__description">Turns columns into rows. <em>This is still experimental, since we don't have any use cases yet.</em></p>
+          </li>
+        </ul>
+
+        <div class="component__playground">
+          <p data-height="465" data-theme-id="dark" data-slug-hash="MeedEx" data-default-tab="css,result" data-user="deioo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/deioo/pen/MeedEx/">Basic grid setup</a> by Andrei Popa (<a href="http://codepen.io/deioo">@deioo</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
