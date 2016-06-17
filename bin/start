@@ -3,4 +3,4 @@
 set -e
 
 grunt generate
-grunt watch
+grunt

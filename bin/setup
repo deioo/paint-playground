@@ -5,4 +5,3 @@ set -e
 npm install -g grunt-cli
 npm install
 bower install
-grunt generate
