@@ -9,5 +9,6 @@ _Todo_:
 
 ## Setup
 
-* Run bin/setup
-* Run bin/start
+* Run `bin/setup` _(first time only)_
+* Run `bin/start`
+* Open index.html
