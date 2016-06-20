@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'styles/application.css' : 'sass/application.scss'
+					'dist/styles/application.css' : 'sass/application.scss'
 				}
 			}
 		},
@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 		  target: {
 		    files: [{
 		      expand: true,
-		      cwd: 'styles',
+		      cwd: 'dist/styles',
 		      src: ['*.css', '!*.min.css'],
-		      dest: 'styles',
+		      dest: 'dist/styles',
 		      ext: '.min.css'
 		    }]
 		  }
