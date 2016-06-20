@@ -11,4 +11,4 @@ _Todo_:
 
 * Run `bin/setup` _(first time only)_
 * Run `bin/start`
-* Open index.html
+* `open dist/index.html`
