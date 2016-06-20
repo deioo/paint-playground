@@ -65,20 +65,10 @@ $component-border-size: 6px;
 
   @include bem-modifier('is-heading') {
     @extend %gutter__vertical-small;
+    @extend %_horizontal-separator;
 
     position: relative;
     text-align: center;
-
-    &::before {
-      @extend %border__bottom;
-
-      content: '';
-      left: 0;
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      z-index: -1;
-    }
 
     @include bem-element('title') {
       @extend %label-base;
@@ -92,4 +82,17 @@ $component-border-size: 6px;
   @extend %border__bottom;
 
   text-transform: uppercase;
+}
+
+%_horizontal-separator {
+  &::before {
+    @extend %border__bottom;
+
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: -1;
+  }
 }
