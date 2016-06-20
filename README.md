@@ -6,6 +6,7 @@ _Todo_:
 
 * include a **Playground mode** where you are going to see the modifiers on the left and the editor on the right.
 * add ability to edit pens inline
+* add a menu
 
 ## Setup
 
