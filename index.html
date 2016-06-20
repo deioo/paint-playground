@@ -28,12 +28,12 @@
       <p class="application__description">It also acts as an abstraction layer, keeping other frameworks / dependencies away from the applications. This makes structural changes (like removing a dependency or adding a new one) easier to implement.</p>
 
       <article class="component">
-        <h1 class="component__heading">Flex Grid</h1>
+        <h1 id="grid" class="component__heading">Flex Grid</h1>
 
         <p class="component__description">The main purpose of this helper component is to allow wrapping up any type of grids without having to copy paste the properties manually each time they are required.</p>
         <p class="component__description">The helper consists of two separate placeholders, <b>%row</b> and <b>%col</b>. The second is never going to work without having the first as a parent, so never extend `%col` without being in the context of a `%row`.</p>
 
-        <h2 class="component__subheading">%row</h2>
+        <h2 id="row" class="component__subheading">%row</h2>
         <p class="component__description">
           Extending this is going to turn the child containers into columns. The `%row` also has control over the alignment of the items, through a set of modifiers:
         </p>
@@ -78,11 +78,100 @@
             <h3 class="feature__title">%row--vertical</h3>
             <p class="feature__description">Turns columns into rows. <em>This is still experimental, since we don't have any use cases yet.</em></p>
           </li>
+
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Sizing</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%row--fill</h3>
+            <p class="feature__description">Adds 100% width to the row. Useful with `position: absolute` or nested rows.</p>
+          </li>
         </ul>
 
         <div class="component__playground">
           <p data-height="465" data-theme-id="dark" data-slug-hash="MeedEx" data-default-tab="css,result" data-user="deioo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/deioo/pen/MeedEx/">Basic grid setup</a> by Andrei Popa (<a href="http://codepen.io/deioo">@deioo</a>) on <a href="http://codepen.io">CodePen</a>.</p>
           <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+
+        <h2 id="col" class="component__subheading">%col</h2>
+        <p class="component__description">
+          The `%col` consists of a set of placeholders to control the size / position / alignment of a single column element:
+        </p>
+
+        <ul class="features">
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Alignment</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--middle</h3>
+            <p class="feature__description">Aligns the current column <b>vertically</b>. Makes a difference only if the columns have different heights.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--center</h3>
+            <p class="feature__description">Aligns the column <b>horizontally</b>, pushing the columns from the left and right to the edges of the row.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--[top / bottom / left / right]</h3>
+            <p class="feature__description">Aligns the column to the <b>top / bottom / left or right</b></p>
+          </li>
+
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Spacing</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--gutter</h3>
+            <p class="feature__description">Adds a standard gutter margin to the column. The last-child in the row won't get a margin.</p>
+          </li>
+
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Sizing</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col-[1 - 12]</h3>
+            <p class="feature__description">Set the column width to a fixed grid size (1 of 12, 2 of 12 etc.). The total number of columns in a grid is 12.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col-[push / pull]-[1 - 12]</h3>
+            <p class="feature__description">Pushes or pulls a column with x number of columns. (push adds the extra spacing to the left, pull adds the extra spacing to the right)</p>
+          </li>
+
+          <li class="feature">
+            <h3 class="feature__title">%col--fill</h3>
+            <p class="feature__description">Set the column to fill all the empty space of a row. If used on multiple rows, the space will be shared depending on each column content (so a column with more content will get more space than a column with less content)</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--no-fill</h3>
+            <p class="feature__description">Resets the size of a column to grow as long as the content inside.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--auto-fill</h3>
+            <p class="feature__description">Resets both grow and shrink properties.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col--no-shrink</h3>
+            <p class="feature__description">Makes sure the column won't shrink more than the width of the content inside. Useful e.g for avatars or fixed-size items, where we don't want the content to squash.</p>
+          </li>
+
+          <li class="feature feature--is-heading">
+            <h3 class="feature__title">Responsive</h3>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col-[small / medium / large / xlarge / xxlarge]-[1 - 12]</h3>
+            <p class="feature__description">Set the column width to a fixed grid size for a certain window size. Responsive column items can be combined to define different grid sizes for different resolutions.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col-[small / medium / large / xlarge / xxlarge]-[push / pull]-[1 - 12]</h3>
+            <p class="feature__description">Pushes or pulls a column with x number of columns.</p>
+          </li>
+          <li class="feature">
+            <h3 class="feature__title">%col-[small / medium / large / xlarge / xxlarge]---fill</h3>
+            <p class="feature__description">Set the column to fill all the empty space of a row, in a responsive context. Useful if a column should fill small or medium screens, but follow a grid pattern for other sizes.</p>
+          </li>
+        </ul>
+
+        <div class="component__playground">
+          <p data-height="465" data-theme-id="dark" data-slug-hash="yJaEaq" data-default-tab="css,result" data-user="deioo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/deioo/pen/yJaEaq/">Basic grid setup (%col)</a> by Andrei Popa (<a href="http://codepen.io/deioo">@deioo</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </div>
       </article>
     </section>
