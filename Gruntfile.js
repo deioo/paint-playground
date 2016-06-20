@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
 		sass: {
 			dist: {
 				files: {
@@ -8,6 +9,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		cssmin: {
 		  target: {
 		    files: [{
@@ -19,16 +21,25 @@ module.exports = function(grunt) {
 		    }]
 		  }
 		},
+
 		watch: {
 			css: {
 				files: '**/*.scss',
 				tasks: ['sass', 'cssmin']
 			}
-		}
+		},
+
+	  'gh-pages': {
+	    options: {
+	      base: 'dist'
+	    },
+	    src: ['**']
+	  }
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.registerTask('generate',['sass', 'cssmin']);
 	grunt.registerTask('default',['watch']);
 }
