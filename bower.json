@@ -15,6 +15,6 @@
     "tests"
   ],
   "devDependencies": {
-    "paint": "git+https://github.com/alphasights/paint.git#feature/ap/flex-grid-and-gutter"
+    "paint": "git+https://github.com/alphasights/paint.git#feature/paint-1.0"
   }
 }

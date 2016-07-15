@@ -1,14 +1,17 @@
-$include-html-paint-layout: false;
-$include-html-paint-navigation: false;
-$include-html-paint-quick-jump: false;
-
-$rem-base: 20px;
-$base-font-size: $rem-base;
-
 $playground-font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
-$base-font-family: $playground-font-family;
-$heading-font-family: $playground-font-family;
+$font: (
+  family: $playground-font-family,
+  size: (
+    base: 20px
+  ),
 
-$font-weight-normal: 400;
-$font-weight-bold: 600;
-$font-weight-extrabold: 800;
+  weight: (
+    base: 400,
+    bold: 600,
+    extrabold: 800
+  ),
+
+  heading: (
+    family: $playground-font-family
+  )
+);
