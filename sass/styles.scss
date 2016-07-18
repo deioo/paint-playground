@@ -56,6 +56,7 @@ $component-border-size: 6px;
   @extend %gutter-left-small;
 
   border-width: $component-border-size;
+  list-style: none;
 }
 
 @include b('feature') {
