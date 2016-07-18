@@ -61,6 +61,8 @@ $component-border-size: 6px;
 @include b('feature') {
   @include e('title') {
     @extend %label-interested;
+
+    margin-bottom: 0;
   }
 
   @include m('is-heading') {
